@@ -375,153 +375,73 @@
   <p class="carr-counter" id="counter">1 / 6</p>
 </div>
 
-<!-- CARTE -->
+<!-- DESTINATIONS PAR CONTINENT -->
 <div class="carte-section fade-in">
   <div class="carte-wrapper">
     <span class="section-tag">Mes destinations</span>
-    <h2 class="section-title">Pays <em>visités</em></h2>
+    <h2 class="section-title">14 pays, <em>3 continents</em></h2>
     <div class="divider"></div>
 
-    <div class="pays-liste">
-      <span class="pays-badge" style="background:rgba(196,133,106,0.15);color:#c4856a;">🇫🇷 France</span>
-      <span class="pays-badge" style="background:rgba(232,168,124,0.15);color:#c4856a;">🇪🇸 Espagne</span>
-      <span class="pays-badge" style="background:rgba(232,168,124,0.15);color:#c4856a;">🏝️ Majorque</span>
-      <span class="pays-badge" style="background:rgba(138,158,140,0.15);color:#8a9e8c;">🇬🇧 Angleterre</span>
-      <span class="pays-badge" style="background:rgba(107,143,109,0.15);color:#6b8f6d;">🇮🇪 Irlande</span>
-      <span class="pays-badge" style="background:rgba(184,155,114,0.15);color:#b89b72;">🇩🇪 Allemagne</span>
-      <span class="pays-badge" style="background:rgba(212,184,150,0.15);color:#b89b72;">🇧🇪 Belgique</span>
-      <span class="pays-badge" style="background:rgba(201,168,130,0.15);color:#b89b72;">🇱🇺 Luxembourg</span>
-      <span class="pays-badge" style="background:rgba(155,107,138,0.15);color:#9b6b8a;">🇹🇳 Tunisie</span>
-      <span class="pays-badge" style="background:rgba(155,107,138,0.15);color:#9b6b8a;">🏝️ Djerba</span>
-      <span class="pays-badge" style="background:rgba(122,90,122,0.15);color:#7a5a7a;">🇲🇦 Maroc</span>
-      <span class="pays-badge" style="background:rgba(91,141,184,0.15);color:#5b8db8;">🇬🇷 Athènes</span>
-      <span class="pays-badge" style="background:rgba(91,141,184,0.15);color:#5b8db0;">🇵🇱 Pologne</span>
-    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:3rem;">
 
-    <div class="carte-svg-wrapper">
-      <!-- Carte SVG Europe + Afrique du Nord simplifiée -->
-      <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
-        <!-- Fond océan -->
-        <rect width="900" height="600" fill="#d4e9f7"/>
+      <!-- EUROPE -->
+      <div style="background:var(--warm-white);border-radius:16px;padding:1.8rem;border-top:4px solid var(--terracotta);">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;">
+          <span style="font-size:1.6rem;">🌍</span>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--deep);">Europe</div>
+            <div style="font-size:0.75rem;color:var(--light-text);letter-spacing:0.08em;text-transform:uppercase;">10 destinations</div>
+          </div>
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+          <li style="font-size:0.88rem;color:var(--mid);">🇫🇷 France</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇪🇸 Espagne</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🏝️ Majorque</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇬🇧 Angleterre</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇮🇪 Irlande</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇩🇪 Allemagne</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇧🇪 Belgique</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇱🇺 Luxembourg</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇬🇷 Grèce — Athènes</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇵🇱 Pologne</li>
+        </ul>
+      </div>
 
-        <!-- FRANCE -->
-        <path class="pays-france" d="M320 195 L345 185 L380 190 L395 210 L390 235 L370 255 L345 260 L315 250 L305 230 L310 210 Z"/>
-        <text x="350" y="228" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans" font-weight="500">France</text>
+      <!-- AFRIQUE -->
+      <div style="background:var(--warm-white);border-radius:16px;padding:1.8rem;border-top:4px solid var(--sage);">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;">
+          <span style="font-size:1.6rem;">🌍</span>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--deep);">Afrique</div>
+            <div style="font-size:0.75rem;color:var(--light-text);letter-spacing:0.08em;text-transform:uppercase;">3 destinations</div>
+          </div>
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+          <li style="font-size:0.88rem;color:var(--mid);">🇹🇳 Tunisie ⭐ <em style="font-size:0.78rem;color:var(--terracotta);">1er voyage 2015</em></li>
+          <li style="font-size:0.88rem;color:var(--mid);">🏝️ Djerba</li>
+          <li style="font-size:0.88rem;color:var(--mid);">🇲🇦 Maroc</li>
+        </ul>
+      </div>
 
-        <!-- ESPAGNE -->
-        <path class="pays-espagne" d="M270 250 L310 248 L345 258 L350 280 L340 310 L310 325 L275 320 L250 300 L245 275 L255 258 Z"/>
-        <text x="297" y="293" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans" font-weight="500">Espagne</text>
+      <!-- OBJECTIF JAPON -->
+      <div style="background:var(--deep);border-radius:16px;padding:1.8rem;border-top:4px solid var(--gold);position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-10px;right:-10px;font-size:5rem;opacity:0.06;">🗾</div>
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;">
+          <span style="font-size:1.6rem;">✨</span>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--warm-white);">Objectif 2027 / 2028</div>
+            <div style="font-size:0.75rem;color:rgba(250,248,244,0.4);letter-spacing:0.08em;text-transform:uppercase;">Asie — Prochain continent</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;background:rgba(250,248,244,0.08);border-radius:12px;padding:1rem 1.2rem;border:1px solid rgba(250,248,244,0.1);">
+          <span style="font-size:2rem;">🇯🇵</span>
+          <div>
+            <div style="font-size:1rem;font-weight:500;color:var(--warm-white);">Japon</div>
+            <div style="font-size:0.78rem;color:rgba(250,248,244,0.5);font-style:italic;">Tokyo, Kyoto, découverte d'une nouvelle culture</div>
+          </div>
+        </div>
+      </div>
 
-        <!-- MAJORQUE (île) -->
-        <ellipse class="pays-majorque" cx="355" cy="300" rx="12" ry="8"/>
-        <text x="355" y="303" text-anchor="middle" font-size="7" fill="white" font-family="DM Sans">Majorque</text>
-
-        <!-- ANGLETERRE / UK -->
-        <path class="pays-angleterre" d="M295 130 L320 120 L335 135 L330 165 L315 175 L295 170 L280 155 L285 138 Z"/>
-        <text x="308" y="152" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans" font-weight="500">Angleterre</text>
-
-        <!-- IRLANDE -->
-        <path class="pays-irlande" d="M255 130 L275 122 L285 135 L280 158 L265 165 L250 155 L245 140 Z"/>
-        <text x="265" y="147" text-anchor="middle" font-size="7" fill="white" font-family="DM Sans">Irlande</text>
-
-        <!-- ALLEMAGNE -->
-        <path class="pays-allemagne" d="M380 155 L415 148 L430 165 L428 190 L410 205 L385 205 L368 190 L370 168 Z"/>
-        <text x="399" y="182" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans" font-weight="500">Allemagne</text>
-
-        <!-- BELGIQUE -->
-        <path class="pays-belgique" d="M345 162 L378 158 L382 178 L360 185 L340 180 L338 168 Z"/>
-        <text x="361" y="175" text-anchor="middle" font-size="7" fill="white" font-family="DM Sans">Belgique</text>
-
-        <!-- LUXEMBOURG (petit) -->
-        <rect class="pays-luxembourg" x="372" y="178" width="16" height="14" rx="3"/>
-        <text x="380" y="188" text-anchor="middle" font-size="6" fill="white" font-family="DM Sans">Lux.</text>
-
-        <!-- Autres pays Europe (gris) -->
-        <!-- Portugal -->
-        <path class="pays-default" d="M240 255 L265 252 L268 272 L260 298 L242 295 L235 272 Z"/>
-        <!-- Pays-Bas -->
-        <path class="pays-default" d="M345 140 L370 135 L378 152 L358 160 L340 158 L338 145 Z"/>
-        <!-- Suisse -->
-        <path class="pays-default" d="M378 205 L400 202 L408 218 L395 228 L375 225 L372 212 Z"/>
-        <!-- Italie -->
-        <path class="pays-default" d="M395 215 L425 208 L445 228 L448 260 L435 290 L420 310 L408 295 L400 265 L392 238 Z"/>
-        <!-- Autriche -->
-        <path class="pays-default" d="M415 198 L450 192 L460 205 L455 218 L425 222 L410 212 Z"/>
-        <!-- Pologne -->
-        <path class="pays-default" d="M420 145 L465 140 L475 162 L468 180 L430 182 L415 165 Z"/>
-        <!-- Scandinavie simplifiée -->
-        <path class="pays-default" d="M360 60 L400 48 L430 65 L420 100 L395 115 L365 110 L348 90 Z"/>
-        <path class="pays-default" d="M400 48 L440 40 L455 60 L445 85 L420 95 L410 75 Z"/>
-        <!-- Danemark -->
-        <path class="pays-default" d="M385 118 L400 112 L408 125 L398 138 L382 135 Z"/>
-        <!-- Republique Tcheque -->
-        <path class="pays-default" d="M420 178 L452 172 L458 188 L438 196 L418 192 Z"/>
-        <!-- Grèce continentale -->
-        <path class="pays-grece" d="M448 270 L472 262 L482 278 L478 298 L462 308 L445 298 L440 282 Z"/>
-        <!-- Crète / îles grecques -->
-        <ellipse class="pays-grece" cx="475" cy="318" rx="20" ry="8"/>
-
-        <!-- ATHENES marqueur spécial -->
-        <circle cx="462" cy="285" r="6" fill="#5b8db8" stroke="white" stroke-width="2"/>
-        <text x="472" y="281" font-size="8" fill="#5b8db8" font-family="DM Sans" font-weight="500">Athènes</text>
-
-        <!-- Balkans / Hongrie etc -->
-        <path class="pays-default" d="M435 218 L470 212 L480 235 L472 258 L448 262 L432 245 L428 228 Z"/>
-        <path class="pays-default" d="M458 188 L492 182 L500 202 L488 220 L462 218 L452 202 Z"/>
-
-        <!-- Mer Méditerranée label -->
-        <text x="430" y="345" text-anchor="middle" font-size="11" fill="#7fb3d3" font-family="Cormorant Garamond" font-style="italic">Mer Méditerranée</text>
-
-        <!-- TUNISIE -->
-        <path class="pays-tunisie" d="M390 370 L410 362 L420 378 L418 400 L408 415 L392 412 L382 395 L385 378 Z"/>
-        <text x="401" y="393" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans" font-weight="500">Tunisie</text>
-
-        <!-- DJERBA (île Tunisie) -->
-        <ellipse class="pays-tunisie" cx="408" cy="422" rx="10" ry="7"/>
-        <text x="422" y="425" font-size="7" fill="#9b6b8a" font-family="DM Sans">Djerba</text>
-
-        <!-- MAROC -->
-        <path class="pays-maroc" d="M280 360 L318 352 L330 372 L325 405 L308 425 L285 422 L268 402 L268 378 Z"/>
-        <text x="299" y="393" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans" font-weight="500">Maroc</text>
-
-        <!-- Algérie (gris) -->
-        <path class="pays-default" d="M328 368 L388 358 L395 382 L388 415 L360 430 L330 425 L318 405 Z"/>
-
-        <!-- Libye (gris) -->
-        <path class="pays-default" d="M420 370 L470 362 L478 395 L468 425 L428 428 L415 408 Z"/>
-
-        <!-- Atlantique label -->
-        <text x="160" y="280" text-anchor="middle" font-size="11" fill="#7fb3d3" font-family="Cormorant Garamond" font-style="italic" transform="rotate(-15, 160, 280)">Océan Atlantique</text>
-
-        <!-- Légende carte -->
-        <rect x="620" y="30" width="260" height="220" rx="10" fill="rgba(250,248,244,0.92)" stroke="#e8dcc8" stroke-width="1"/>
-        <text x="750" y="55" text-anchor="middle" font-size="11" fill="#2c2825" font-family="Cormorant Garamond" font-weight="600">Pays visités</text>
-        <line x1="635" y1="62" x2="868" y2="62" stroke="#e8dcc8" stroke-width="0.5"/>
-
-        <rect x="640" y="75" width="12" height="12" rx="3" fill="#c4856a"/>
-        <text x="660" y="85" font-size="9" fill="#5c5248" font-family="DM Sans">France</text>
-
-        <rect x="640" y="97" width="12" height="12" rx="3" fill="#e8a87c"/>
-        <text x="660" y="107" font-size="9" fill="#5c5248" font-family="DM Sans">Espagne &amp; Majorque</text>
-
-        <rect x="640" y="119" width="12" height="12" rx="3" fill="#8a9e8c"/>
-        <text x="660" y="129" font-size="9" fill="#5c5248" font-family="DM Sans">Angleterre</text>
-
-        <rect x="640" y="141" width="12" height="12" rx="3" fill="#6b8f6d"/>
-        <text x="660" y="151" font-size="9" fill="#5c5248" font-family="DM Sans">Irlande</text>
-
-        <rect x="640" y="163" width="12" height="12" rx="3" fill="#b89b72"/>
-        <text x="660" y="173" font-size="9" fill="#5c5248" font-family="DM Sans">Allemagne / Belgique / Lux.</text>
-
-        <rect x="640" y="185" width="12" height="12" rx="3" fill="#9b6b8a"/>
-        <text x="660" y="195" font-size="9" fill="#5c5248" font-family="DM Sans">Tunisie &amp; Djerba</text>
-
-        <rect x="640" y="207" width="12" height="12" rx="3" fill="#7a5a7a"/>
-        <text x="660" y="217" font-size="9" fill="#5c5248" font-family="DM Sans">Maroc</text>
-
-        <rect x="640" y="229" width="12" height="12" rx="3" fill="#5b8db8"/>
-        <text x="660" y="239" font-size="9" fill="#5c5248" font-family="DM Sans">Athènes, Grèce</text>
-      </svg>
     </div>
   </div>
 </div>
