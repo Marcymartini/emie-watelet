@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emie Watelet — MBA Hôtellerie & Tourisme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --sand:#f5efe6;--warm-white:#faf8f4;--terracotta:#c4856a;--terracotta-light:#e8bfac;--sage:#8a9e8c;--sage-light:#c8d8c9;--deep:#2c2825;--mid:#5c5248;--light-text:#9c9088;--gold:#b89b72;--gold-light:#e8dcc8; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--warm-white);color:var(--deep);font-size:15px;line-height:1.7;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(250,248,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold-light)}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;letter-spacing:.04em;color:var(--deep);text-decoration:none}
+    .nav-links{display:flex;gap:2.5rem;list-style:none}
+    .nav-links a{text-decoration:none;color:var(--mid);font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .3s}
+    .nav-links a:hover{color:var(--terracotta)}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px}
+    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 5rem;position:relative}
+    .hero-left::after{content:'';position:absolute;top:15%;right:0;bottom:15%;width:1px;background:linear-gradient(to bottom,transparent,var(--gold-light),transparent)}
+    .hero-tag{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta);background:rgba(196,133,106,.1);padding:.35rem 1rem;border-radius:2rem;margin-bottom:1.8rem;width:fit-content}
+    .hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.05;color:var(--deep);margin-bottom:.5rem}
+    .hero-name em{font-style:italic;color:var(--terracotta)}
+    .hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--mid);font-style:italic;margin-bottom:2rem}
+    .hero-desc{color:var(--mid);max-width:420px;margin-bottom:2.5rem;font-size:.95rem;line-height:1.8}
+    .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--terracotta);color:#fff;padding:.85rem 2rem;border-radius:3rem;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.05em;transition:all .3s;border:none;cursor:pointer}
+    .btn-primary:hover{background:var(--deep);transform:translateY(-2px)}
+    .btn-secondary{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid var(--gold);color:var(--deep);padding:.85rem 2rem;border-radius:3rem;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.05em;transition:all .3s}
+    .btn-secondary:hover{background:var(--gold-light);transform:translateY(-2px)}
+    .hero-contact{display:flex;gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--gold-light)}
+    .contact-item{display:flex;flex-direction:column}
+    .contact-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--light-text)}
+    .contact-value{font-size:.88rem;color:var(--deep);font-weight:500}
+    .hero-right{background:var(--sand);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:5rem 3rem;position:relative;overflow:hidden}
+    .hero-right::before{content:'✈';position:absolute;top:10%;right:10%;font-size:6rem;opacity:.05;transform:rotate(-20deg)}
+    .hero-photo-frame{width:320px;height:400px;border-radius:12px;background:linear-gradient(135deg,var(--terracotta-light),var(--sage-light));position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(44,40,37,.15)}
+    .hero-photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-stats{display:flex;gap:2rem;margin-top:2.5rem}
+    .stat{text-align:center}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--terracotta)}
+    .stat-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--light-text)}
+    section{padding:6rem 5rem}
+    .section-header{margin-bottom:3.5rem}
+    .section-tag{display:inline-block;font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.6rem}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--deep);line-height:1.2}
+    .section-title em{font-style:italic;color:var(--terracotta)}
+    .divider{width:3rem;height:2px;background:var(--gold);margin-top:1rem}
+    #profil{background:var(--warm-white);display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center}
+    .profil-text p{color:var(--mid);margin-bottom:1.2rem}
+    .profil-badges{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+    .badge{padding:.4rem 1rem;border-radius:2rem;font-size:.78rem;font-weight:500;letter-spacing:.04em}
+    .badge-terra{background:rgba(196,133,106,.12);color:var(--terracotta)}
+    .badge-sage{background:rgba(138,158,140,.12);color:var(--sage)}
+    .badge-gold{background:rgba(184,155,114,.12);color:var(--gold)}
+    .profil-highlights{display:flex;flex-direction:column;gap:1.5rem}
+    .highlight-card{background:var(--sand);border-radius:12px;padding:1.5rem;border-left:3px solid var(--terracotta)}
+    .highlight-card h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--terracotta);margin-bottom:.4rem}
+    .highlight-card p{font-size:.88rem;color:var(--mid)}
+    #experiences{background:var(--sand)}
+    .exp-grid{display:flex;flex-direction:column;gap:2rem}
+    .exp-card{background:var(--warm-white);border-radius:16px;padding:2.5rem;display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:start;box-shadow:0 2px 20px rgba(44,40,37,.05);transition:transform .3s,box-shadow .3s}
+    .exp-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(44,40,37,.1)}
+    .exp-logo{width:60px;height:60px;border-radius:12px;background:linear-gradient(135deg,var(--terracotta-light),var(--gold-light));display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+    .exp-company{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--deep)}
+    .exp-role{color:var(--terracotta);font-weight:500;font-size:.88rem;margin-bottom:.8rem}
+    .exp-tasks{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+    .exp-tasks li{font-size:.88rem;color:var(--mid);padding-left:1.2rem;position:relative}
+    .exp-tasks li::before{content:'—';position:absolute;left:0;color:var(--gold)}
+    .exp-period{text-align:right;flex-shrink:0}
+    .exp-date{font-size:.8rem;color:var(--light-text);letter-spacing:.08em;white-space:nowrap}
+    .exp-stars{color:var(--gold);font-size:.75rem}
+    #formation{background:var(--warm-white)}
+    .formation-timeline{position:relative;padding-left:2rem}
+    .formation-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--terracotta),var(--sage),var(--gold));border-radius:1px}
+    .formation-item{position:relative;margin-bottom:2.5rem;padding-left:2.5rem}
+    .formation-item::before{content:'';position:absolute;left:-2.7rem;top:.6rem;width:12px;height:12px;border-radius:50%;background:var(--terracotta);border:2px solid var(--warm-white);box-shadow:0 0 0 3px var(--terracotta-light)}
+    .formation-item:nth-child(2)::before{background:var(--sage);box-shadow:0 0 0 3px var(--sage-light)}
+    .formation-item:nth-child(3)::before{background:var(--gold);box-shadow:0 0 0 3px var(--gold-light)}
+    .formation-item:nth-child(4)::before{background:var(--mid);box-shadow:0 0 0 3px var(--sand)}
+    .formation-degree{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--deep)}
+    .formation-school{color:var(--terracotta);font-size:.85rem;font-weight:500}
+    .formation-date{color:var(--light-text);font-size:.8rem}
+    #competences{background:var(--sand)}
+    .skills-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem}
+    .skill-group{background:var(--warm-white);border-radius:16px;padding:2rem}
+    .skill-group h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--deep);margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--gold-light)}
+    .skill-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+    .skill-list li{font-size:.88rem;color:var(--mid);display:flex;align-items:center;gap:.6rem}
+    .skill-list li::before{content:'◆';font-size:.45rem;color:var(--terracotta)}
+    .lang-items{display:flex;flex-direction:column;gap:1rem}
+    .lang-name{font-weight:500;font-size:.88rem;margin-bottom:.3rem}
+    .lang-bar{height:4px;background:var(--gold-light);border-radius:2px;overflow:hidden}
+    .lang-fill{height:100%;border-radius:2px;background:linear-gradient(to right,var(--terracotta),var(--gold))}
+    #galerie{background:var(--warm-white)}
+    .gallery-intro{color:var(--mid);max-width:500px;margin-bottom:3rem}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:220px 220px;gap:1rem}
+    .gallery-item{border-radius:12px;overflow:hidden;position:relative;background:var(--sand);cursor:pointer;transition:transform .3s}
+    .gallery-item:hover{transform:scale(1.02)}
+    .gallery-item:nth-child(1){grid-column:1/2;grid-row:1/3}
+    .gallery-item:nth-child(4){grid-column:3/4;grid-row:1/3}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+    .voyage-cta{margin-top:3rem;background:var(--sand);border-radius:20px;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .voyage-cta-text h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--deep);margin-bottom:.4rem}
+    .voyage-cta-text h3 em{font-style:italic;color:var(--terracotta)}
+    .voyage-cta-text p{font-size:.88rem;color:var(--mid);max-width:400px}
+    .btn-voyage{display:inline-flex;align-items:center;gap:.6rem;background:var(--deep);color:var(--warm-white);padding:1rem 2.2rem;border-radius:3rem;text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;transition:all .3s;white-space:nowrap;flex-shrink:0}
+    .btn-voyage:hover{background:var(--terracotta);transform:translateY(-2px)}
+    #lettre{background:var(--sand)}
+    .lettre-wrapper{max-width:750px;margin:0 auto;background:var(--warm-white);border-radius:16px;padding:4rem;box-shadow:0 4px 40px rgba(44,40,37,.08);position:relative}
+    .lettre-wrapper::before{content:'"';position:absolute;top:1.5rem;left:2.5rem;font-family:'Cormorant Garamond',serif;font-size:6rem;color:var(--gold-light);line-height:1}
+    .lettre-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--gold-light)}
+    .lettre-sender{font-weight:500;margin-bottom:.5rem}
+    .lettre-meta{font-size:.88rem;color:var(--mid)}
+    .lettre-objet{font-size:.85rem;font-weight:600;color:var(--terracotta);margin-bottom:2rem;letter-spacing:.03em}
+    .lettre-body p{margin-bottom:1.2rem;color:var(--mid);line-height:1.9}
+    .lettre-body p:first-of-type::first-letter{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;float:left;line-height:.8;margin-right:.1em;color:var(--terracotta);margin-top:.1em}
+    .lettre-sign{margin-top:2rem;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic}
+    #contact{background:var(--deep);color:var(--warm-white);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    #contact .section-title{color:var(--warm-white)}
+    #contact .divider{background:var(--terracotta)}
+    .contact-intro{color:rgba(250,248,244,.6);margin-top:1rem}
+    .contact-cards{display:flex;flex-direction:column;gap:1.2rem}
+    .contact-card{display:flex;align-items:center;gap:1.2rem;background:rgba(250,248,244,.06);border-radius:12px;padding:1.2rem 1.5rem;border:1px solid rgba(250,248,244,.08);text-decoration:none;transition:background .3s}
+    .contact-card:hover{background:rgba(250,248,244,.1)}
+    .contact-icon{width:44px;height:44px;border-radius:10px;background:var(--terracotta);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .contact-card-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(250,248,244,.4)}
+    .contact-card-val{font-size:.95rem;color:var(--warm-white)}
+    footer{text-align:center;padding:2rem;font-size:.78rem;color:var(--light-text);background:var(--warm-white);border-top:1px solid var(--gold-light)}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+    .fade-in.visible{opacity:1;transform:none}
+    @media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{gap:1.5rem}.hero{grid-template-columns:1fr;min-height:auto}.hero-left{padding:7rem 2rem 3rem}.hero-left::after{display:none}.hero-right{padding:3rem 2rem}section{padding:4rem 2rem}#profil,#contact{grid-template-columns:1fr;gap:2.5rem}.skills-grid{grid-template-columns:1fr 1fr}.exp-card{grid-template-columns:auto 1fr}.exp-period{grid-column:2}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}.gallery-item:nth-child(1),.gallery-item:nth-child(4){grid-column:auto;grid-row:auto}.lettre-wrapper{padding:2.5rem}.voyage-cta{flex-direction:column}}
+    @media(max-width:600px){.nav-links{display:none}.skills-grid{grid-template-columns:1fr}.hero-stats{gap:1.2rem}.hero-contact{flex-direction:column;gap:1rem}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="#top">Emie Watelet</a>
+  <ul class="nav-links">
+    <li><a href="#profil">Profil</a></li>
+    <li><a href="#experiences">Expériences</a></li>
+    <li><a href="#formation">Formation</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#lettre">Ma Lettre</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<section id="top" class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">✈ Alternance 2026 — MBA Hôtellerie & Tourisme</span>
+    <h1 class="hero-name">Emie<br /><em>Watelet</em></h1>
+    <p class="hero-sub">Future MBA Hôtellerie & du Tourisme</p>
+    <p class="hero-desc">Passionnée par l'hôtellerie et la relation client, je cherche un contrat d'alternance pour accompagner mon MBA à l'École Internationale Tunon. Réceptionniste au Novotel Reims, expérience internationale, B2 Cambridge.</p>
+    <div class="hero-ctas">
+      <a href="#lettre" class="btn-primary">📄 Lire ma lettre</a>
+      <a href="#experiences" class="btn-secondary">Voir mon parcours</a>
+    </div>
+    <div class="hero-contact">
+      <div class="contact-item"><span class="contact-label">📍 Localisation</span><span class="contact-value">Reims, France</span></div>
+      <div class="contact-item"><span class="contact-label">📱 Téléphone</span><span class="contact-value">06 60 81 63 78</span></div>
+      <div class="contact-item"><span class="contact-label">🚗 Mobilité</span><span class="contact-value">Permis B — Véhiculée</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-frame">
+      <img src="photo-profil.jpg" alt="Emie Watelet" style="width:100%;height:100%;object-fit:cover;" />
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Expériences</div></div>
+      <div class="stat"><div class="stat-num">B2</div><div class="stat-label">Cambridge EN</div></div>
+      <div class="stat"><div class="stat-num">★★★★</div><div class="stat-label">Hôtellerie</div></div>
+    </div>
+  </div>
+</section>
+<section id="profil" class="fade-in">
+  <div class="profil-text">
+    <div class="section-header"><span class="section-tag">À propos</span><h2 class="section-title">Mon <em>Profil</em></h2><div class="divider"></div></div>
+    <p>Future étudiante en MBA Management de l'Hôtellerie & du Tourisme, je suis passionnée par le secteur hôtelier et la relation client, nourrie par mes voyages et mes expériences professionnelles enrichissantes.</p>
+    <p>Motivée et orientée service, je souhaite évoluer dans ce domaine et contribuer à créer des expériences mémorables pour les clients. Mes séjours à l'étranger et ma certification Cambridge B2 me permettent de communiquer aisément avec une clientèle internationale.</p>
+    <div class="profil-badges">
+      <span class="badge badge-terra">Service client</span>
+      <span class="badge badge-sage">Hôtellerie ★★★★</span>
+      <span class="badge badge-gold">Utilisation intelligente de l'IA</span>
+      <span class="badge badge-terra">Gestion administrative</span>
+      <span class="badge badge-sage">Communication interculturelle</span>
+      <span class="badge badge-gold">Canva & Réseaux sociaux</span>
+      <span class="badge badge-terra">Travail en équipe</span>
+    </div>
+  </div>
+  <div class="profil-highlights">
+    <div class="highlight-card"><h4>🎓 Formation actuelle</h4><p>Bachelor Tourisme — École Internationale Tunon<br />Rentrée 2026 : MBA Management Hôtellerie & Tourisme</p></div>
+    <div class="highlight-card"><h4>🌍 Langues</h4><p>Français (langue maternelle) · Anglais (certification Cambridge B2)</p></div>
+    <div class="highlight-card"><h4>🏨 Expérience phare</h4><p>Alternante Réceptionniste au Novotel Reims Tinqueux ★★★★ depuis 2025</p></div>
+    <div class="highlight-card"><h4>🚗 Mobilité</h4><p>Permis B — Véhiculée — Basée à Reims</p></div>
+  </div>
+</section>
+<section id="experiences" class="fade-in">
+  <div class="section-header"><span class="section-tag">Parcours professionnel</span><h2 class="section-title">Mes <em>Expériences</em></h2><div class="divider"></div></div>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-logo">🏨</div>
+      <div>
+        <div class="exp-company">Novotel Reims Tinqueux</div>
+        <div class="exp-role">Alternante Réceptionniste <span class="exp-stars">★★★★</span></div>
+        <ul class="exp-tasks"><li>Accueil et accompagnement client</li><li>Gestion des réservations et facturation</li><li>Coordination opérationnelle</li><li>Gestion administrative hôtelière</li><li>Communication et relation client internationale</li><li>Organisation et polyvalence</li></ul>
+      </div>
+      <div class="exp-period"><div class="exp-date">2025 — Aujourd'hui</div></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-logo">🌲</div>
+      <div>
+        <div class="exp-company">Center Parcs Laon</div>
+        <div class="exp-role">Saisonnière — Agent de Location</div>
+        <ul class="exp-tasks"><li>Accueil et relation clientèle internationale</li><li>Gestion de caisse et conseil spécialisé</li><li>Réalisation d'états des lieux</li><li>Gestion administrative</li><li>Mise en place d'actions promotionnelles</li><li>Information et conseil touristique</li><li>Gestion des recettes et dépôt bancaire</li><li>Transmission et transfert de compétences</li><li>Gestion des stocks et réassort</li></ul>
+      </div>
+      <div class="exp-period"><div class="exp-date">18 semaines<br />2023 — 2025</div></div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-logo">⛺</div>
+      <div>
+        <div class="exp-company">Camping Les Cent Chênes</div>
+        <div class="exp-role">Stagiaire Agent Polyvalent <span class="exp-stars">★★★★</span></div>
+        <ul class="exp-tasks"><li>Accueil et relation clientèle internationale</li><li>Gestion des réservations</li><li>Entretien et maintenance des installations</li><li>Service en restauration</li><li>Vente et encaissement</li></ul>
+      </div>
+      <div class="exp-period"><div class="exp-date">Mai — Juin 2024</div></div>
+    </div>
+  </div>
+</section>
+<section id="formation" class="fade-in">
+  <div class="section-header"><span class="section-tag">Parcours académique</span><h2 class="section-title">Ma <em>Formation</em></h2><div class="divider"></div></div>
+  <div class="formation-timeline">
+    <div class="formation-item"><div class="formation-degree">MBA Management de l'Hôtellerie & du Tourisme</div><div class="formation-school">École Internationale Tunon</div><div class="formation-date">2026 — 2028</div></div>
+    <div class="formation-item"><div class="formation-degree">Bachelor Tourisme</div><div class="formation-school">École Internationale Tunon</div><div class="formation-date">2025 — 2026</div></div>
+    <div class="formation-item"><div class="formation-degree">BTS Tourisme</div><div class="formation-school">Lycée des Métiers — Bazeilles</div><div class="formation-date">2023 — 2025</div></div>
+    <div class="formation-item"><div class="formation-degree">Baccalauréat</div><div class="formation-school">Lycée Pierre Bayle — Sedan</div><div class="formation-date">2023</div></div>
+  </div>
+</section>
+<section id="competences" class="fade-in">
+  <div class="section-header"><span class="section-tag">Savoir-faire</span><h2 class="section-title">Mes <em>Compétences</em></h2><div class="divider"></div></div>
+  <div class="skills-grid">
+    <div class="skill-group"><h3>💼 Compétences métier</h3><ul class="skill-list"><li>Accueil et relation client</li><li>Gestion des réservations & facturation</li><li>Gestion administrative hôtelière</li><li>Information et conseil touristique</li><li>Coordination opérationnelle</li><li>Gestion de caisse & encaissement</li></ul></div>
+    <div class="skill-group"><h3>🛠 Outils & Digital</h3><ul class="skill-list"><li>Maîtrise des outils bureautiques</li><li>Création de contenu visuel — Canva</li><li>Réseaux sociaux</li><li>Logiciels de gestion hôtelière — Fols</li><li>Utilisation IA</li><li>Création de site internet</li></ul></div>
+    <div class="skill-group"><h3>🌍 Langues</h3><div class="lang-items"><div class="lang-item"><div class="lang-name">Français</div><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div><div style="font-size:.75rem;color:var(--light-text);margin-top:.2rem">Langue maternelle</div></div><div class="lang-item"><div class="lang-name">Anglais</div><div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div><div style="font-size:.75rem;color:var(--light-text);margin-top:.2rem">Certification Cambridge B2</div></div></div></div>
+  </div>
+</section>
+<section id="galerie" class="fade-in">
+  <div class="section-header"><span class="section-tag">En images</span><h2 class="section-title">Mes <em>Voyages & Expériences</em></h2><div class="divider"></div></div>
+  <p class="gallery-intro">Quelques moments qui ont forgé ma passion pour l'hôtellerie, le tourisme et la découverte du monde.</p>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="photo1.JPG" alt="Photo 1" style="width:100%;height:100%;object-fit:cover;" /></div>
+    <div class="gallery-item"><img src="photo2.jpg" alt="Photo 2" style="width:100%;height:100%;object-fit:cover;" /></div>
+    <div class="gallery-item"><img src="photo3.jpg" alt="Photo 3" style="width:100%;height:100%;object-fit:cover;" /></div>
+    <div class="gallery-item"><img src="photo4.jpeg" alt="Photo 4" style="width:100%;height:100%;object-fit:cover;" /></div>
+  </div>
+  <div class="voyage-cta">
+    <div class="voyage-cta-text">
+      <h3>Le début d'une <em>passion</em></h3>
+      <p>En 2015, un premier voyage en Tunisie a tout changé. Découvrez mon histoire, mes destinations et la carte de mes voyages à travers le monde.</p>
+    </div>
+    <a href="voyage.html" class="btn-voyage">✈ Le début d'une passion →</a>
+  </div>
+</section>
+<section id="lettre" class="fade-in">
+  <div class="section-header"><span class="section-tag">Lettre de motivation</span><h2 class="section-title">Ma <em>Candidature</em></h2><div class="divider"></div></div>
+  <div class="lettre-wrapper">
+    <div class="lettre-header"><div class="lettre-sender">Emie Watelet · Reims · 06 60 81 63 78 · j.wateletemie@gmail.com</div><div class="lettre-meta">Reims, le 22 mars 2026</div></div>
+    <div class="lettre-objet">Objet : Candidature pour un contrat d'alternance<br />MBA Management de l'Hôtellerie & du Tourisme</div>
+    <div class="lettre-body">
+      <p>Madame, Monsieur,</p>
+      <p>Actuellement en Bachelor Tourisme à l'École Internationale Tunon, je me permets de vous adresser ma candidature en vue d'intégrer votre établissement dans le cadre d'un contrat d'alternance, en parallèle de mon MBA Management de l'Hôtellerie & du Tourisme que j'entamerai à la rentrée 2026.</p>
+      <p>Mon parcours m'a permis d'acquérir une expérience solide dans le secteur. En poste depuis 2025 en tant qu'alternante réceptionniste au Novotel Reims Tinqueux, j'assure au quotidien l'accueil des clients, la gestion des réservations et la facturation, tout en veillant à la qualité de la relation client. Auparavant, j'ai travaillé plusieurs saisons chez Center Parcs à Laon, où j'ai développé un sens aigu du service, de la rigueur administrative et de la communication avec une clientèle internationale.</p>
+      <p>Ces expériences, combinées à ma certification Cambridge B2 en anglais, m'ont appris à travailler avec efficacité dans des environnements exigeants, à m'adapter rapidement et à prioriser la satisfaction client en toutes circonstances. Je suis à l'aise aussi bien dans les tâches opérationnelles que dans celles à dimension administrative ou commerciale.</p>
+      <p>Motivée, curieuse et investie, je suis convaincue que votre établissement représente un cadre idéal pour approfondir mes compétences et contribuer pleinement à vos équipes. Je serais ravie de vous présenter ma candidature lors d'un entretien à votre convenance.</p>
+      <p>Dans l'attente de votre retour, je vous adresse mes cordiales salutations.</p>
+    </div>
+    <div class="lettre-sign">Emie Watelet</div>
+  </div>
+</section>
+<section id="contact" class="fade-in">
+  <div>
+    <div class="section-header"><span class="section-tag" style="color:var(--terracotta-light)">Me contacter</span><h2 class="section-title">Travaillons<br /><em>ensemble</em></h2><div class="divider"></div></div>
+    <p class="contact-intro">Je suis disponible pour un entretien à votre convenance. N'hésitez pas à me contacter.</p>
+  </div>
+  <div class="contact-cards">
+    <a class="contact-card" href="tel:0660816378"><div class="contact-icon">📱</div><div><div class="contact-card-label">Téléphone</div><div class="contact-card-val">06 60 81 63 78</div></div></a>
+    <a class="contact-card" href="mailto:j.wateletemie@gmail.com"><div class="contact-icon">✉️</div><div><div class="contact-card-label">Email</div><div class="contact-card-val">j.wateletemie@gmail.com</div></div></a>
+    <div class="contact-card"><div class="contact-icon">📍</div><div><div class="contact-card-label">Localisation</div><div class="contact-card-val">Reims, Champagne-Ardenne</div></div></div>
+    <div class="contact-card"><div class="contact-icon">🎓</div><div><div class="contact-card-label">Disponibilité</div><div class="contact-card-val">Alternance — Rentrée 2026</div></div></div>
+  </div>
+</section>
+<footer><p>© 2026 Emie Watelet — Tous droits réservés · Site créé avec ❤️ pour ma candidature MBA Hôtellerie & Tourisme</p></footer>
+<script>
+  const observer = new IntersectionObserver((entries) => { entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); }); }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id'); });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--terracotta)' : ''; });
+  });
+</script>
+</body>
+</html>
