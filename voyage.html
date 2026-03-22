@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Début d'une Passion — Emie Watelet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sand: #f5efe6;
+      --warm-white: #faf8f4;
+      --terracotta: #c4856a;
+      --terracotta-light: #e8bfac;
+      --sage: #8a9e8c;
+      --sage-light: #c8d8c9;
+      --deep: #2c2825;
+      --mid: #5c5248;
+      --light-text: #9c9088;
+      --gold: #b89b72;
+      --gold-light: #e8dcc8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-white);
+      color: var(--deep);
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(250, 248, 244, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-light);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600; letter-spacing: 0.04em;
+      color: var(--deep); text-decoration: none;
+    }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      text-decoration: none; color: var(--mid); font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-back:hover { color: var(--terracotta); }
+
+    /* ── HERO ── */
+    .page-hero {
+      min-height: 60vh;
+      background: var(--sand);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 8rem 3rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '✈';
+      position: absolute; font-size: 18rem; opacity: 0.04;
+      top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-15deg);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--terracotta);
+      background: rgba(196,133,106,0.1);
+      padding: 0.35rem 1rem; border-radius: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 300; line-height: 1.05;
+      color: var(--deep); margin-bottom: 1rem;
+    }
+    .page-title em { font-style: italic; color: var(--terracotta); }
+    .page-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-style: italic; color: var(--mid);
+      max-width: 500px;
+    }
+
+    /* ── HISTOIRE ── */
+    .histoire {
+      max-width: 800px; margin: 0 auto;
+      padding: 5rem 3rem;
+      display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start;
+    }
+    .histoire-annee {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem; font-weight: 300; color: var(--terracotta-light);
+      line-height: 1; position: sticky; top: 120px;
+    }
+    .histoire-annee span {
+      display: block; font-size: 0.9rem; font-family: 'DM Sans', sans-serif;
+      color: var(--terracotta); font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-top: 0.5rem;
+    }
+    .histoire-texte p {
+      color: var(--mid); margin-bottom: 1.4rem; font-size: 1rem; line-height: 1.9;
+    }
+    .histoire-texte p:first-of-type::first-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem; font-weight: 600; float: left;
+      line-height: 0.8; margin-right: 0.1em; color: var(--terracotta); margin-top: 0.1em;
+    }
+    .histoire-citation {
+      background: var(--sand); border-left: 3px solid var(--terracotta);
+      border-radius: 0 12px 12px 0; padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-style: italic; color: var(--deep);
+    }
+
+    /* ── CARROUSEL ── */
+    .carrousel-section {
+      background: var(--sand); padding: 4rem 3rem;
+    }
+    .section-tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--terracotta);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 300; color: var(--deep);
+    }
+    .section-title em { font-style: italic; color: var(--terracotta); }
+    .divider { width: 3rem; height: 2px; background: var(--gold); margin: 1rem 0 2.5rem; }
+    .carrousel-wrapper {
+      position: relative; max-width: 680px; margin: 0 auto;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(44,40,37,0.12);
+    }
+    .carrousel-inner {
+      display: flex; transition: transform 0.5s ease;
+    }
+    .carrousel-slide {
+      min-width: 100%; height: 420px;
+      background: var(--warm-white);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; color: var(--light-text); gap: 0.5rem;
+      position: relative; overflow: hidden;
+    }
+    .carrousel-slide img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .carrousel-placeholder { text-align: center; }
+    .carrousel-placeholder span { font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+    .carrousel-placeholder p { font-size: 0.8rem; }
+    .carr-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.92); border: none; border-radius: 50%;
+      width: 48px; height: 48px; font-size: 1.4rem; cursor: pointer;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12); transition: all 0.2s; z-index: 2;
+      display: flex; align-items: center; justify-content: center; color: var(--deep);
+    }
+    .carr-btn:hover { background: white; transform: translateY(-50%) scale(1.05); }
+    .carr-btn-left { left: 1rem; }
+    .carr-btn-right { right: 1rem; }
+    .carr-dots {
+      position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 0.5rem; z-index: 2;
+    }
+    .carr-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--terracotta); opacity: 0.3; transition: opacity 0.3s;
+      cursor: pointer;
+    }
+    .carr-dot.active { opacity: 1; }
+    .carr-counter {
+      text-align: center; margin-top: 1rem;
+      font-size: 0.78rem; color: var(--light-text); letter-spacing: 0.1em;
+    }
+
+    /* ── CARTE ── */
+    .carte-section { padding: 5rem 3rem; background: var(--warm-white); }
+    .carte-wrapper {
+      max-width: 900px; margin: 0 auto;
+    }
+    .pays-liste {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem;
+    }
+    .pays-badge {
+      padding: 0.4rem 1rem; border-radius: 2rem;
+      font-size: 0.78rem; font-weight: 500;
+      cursor: default;
+    }
+    .carte-svg-wrapper {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 30px rgba(44,40,37,0.08);
+      background: #d4e9f7;
+      position: relative;
+    }
+    .carte-svg-wrapper svg { width: 100%; height: auto; display: block; }
+
+    /* Couleurs pays */
+    .pays-france { fill: #c4856a; }
+    .pays-espagne { fill: #e8a87c; }
+    .pays-majorque { fill: #e8a87c; }
+    .pays-angleterre { fill: #8a9e8c; }
+    .pays-irlande { fill: #6b8f6d; }
+    .pays-allemagne { fill: #b89b72; }
+    .pays-belgique { fill: #d4b896; }
+    .pays-luxembourg { fill: #c9a882; }
+    .pays-tunisie { fill: #9b6b8a; }
+    .pays-maroc { fill: #7a5a7a; }
+    .pays-djerba { fill: #9b6b8a; }
+    .pays-grece { fill: #5b8db8; }
+    .pays-default { fill: #e8e4dc; }
+
+    .legende {
+      display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;
+    }
+    .legende-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem; color: var(--mid);
+    }
+    .legende-dot {
+      width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    /* ── COMPTEUR ── */
+    .compteur {
+      display: flex; gap: 2rem; justify-content: center;
+      padding: 3rem; background: var(--sand);
+      flex-wrap: wrap;
+    }
+    .compteur-item { text-align: center; }
+    .compteur-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; font-weight: 300; color: var(--terracotta);
+      display: block;
+    }
+    .compteur-label {
+      font-size: 0.72rem; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--light-text);
+    }
+
+    /* ── RETOUR ── */
+    .retour-section {
+      text-align: center; padding: 4rem 3rem;
+      background: var(--deep); color: var(--warm-white);
+    }
+    .retour-section p {
+      color: rgba(250,248,244,0.6); margin-bottom: 2rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic;
+    }
+    .btn-retour {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--terracotta); color: #fff;
+      padding: 0.85rem 2rem; border-radius: 3rem;
+      text-decoration: none; font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.05em; transition: all 0.3s;
+    }
+    .btn-retour:hover { background: var(--gold); transform: translateY(-2px); }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 700px) {
+      nav { padding: 1rem 1.5rem; }
+      .histoire { grid-template-columns: 1fr; gap: 1rem; padding: 3rem 1.5rem; }
+      .histoire-annee { position: static; font-size: 3rem; }
+      .carrousel-section, .carte-section { padding: 3rem 1.5rem; }
+      .carr-btn { width: 38px; height: 38px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Emie Watelet</a>
+  <a class="nav-back" href="index.html">← Retour au portfolio</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <span class="hero-tag">✈ Mes voyages</span>
+  <h1 class="page-title">Le début<br />d'une <em>passion</em></h1>
+  <p class="page-subtitle">De la Tunisie au monde — comment un voyage a tout changé</p>
+</div>
+
+<!-- HISTOIRE -->
+<div class="histoire fade-in">
+  <div class="histoire-annee">
+    2015
+    <span>Premier voyage</span>
+  </div>
+  <div class="histoire-texte">
+    <p>
+      J'avais tout juste dix ans lorsque j'ai posé le pied pour la première fois sur une terre étrangère.
+      La Tunisie. Un pays baigné de soleil, de couleurs ocre et de mer turquoise. Ce voyage, organisé en famille,
+      devait n'être qu'un séjour ordinaire. Il est devenu le point de départ de tout.
+    </p>
+    <div class="histoire-citation">
+      « Ce n'est pas la destination qui m'a marquée, mais la façon dont on m'a accueillie. Un sourire à la réception,
+      un service attentionné, la sensation d'être attendue — c'est là que j'ai compris ce que l'hôtellerie pouvait offrir. »
+    </div>
+    <p>
+      Dès cet instant, j'ai regardé le monde différemment. Les hôtels, les restaurants, les guides touristiques —
+      tout ce qui compose l'expérience du voyageur m'a fascinée. J'observais le personnel avec admiration,
+      curieuse de comprendre comment on crée ce sentiment de bien-être chez les autres.
+    </p>
+    <p>
+      Depuis ce premier voyage, j'ai eu la chance de découvrir treize pays et destinations, de l'Irlande à la Grèce,
+      du Maroc à l'Allemagne. Chaque voyage a nourri ma curiosité, renforcé mon sens de l'adaptation
+      et ma passion pour les échanges interculturels — des qualités que je mets aujourd'hui au service
+      de mes clients à la réception du Novotel Reims Tinqueux.
+    </p>
+  </div>
+</div>
+
+<!-- COMPTEUR -->
+<div class="compteur fade-in">
+  <div class="compteur-item">
+    <span class="compteur-num">2015</span>
+    <span class="compteur-label">Premier voyage</span>
+  </div>
+  <div class="compteur-item">
+    <span class="compteur-num">13</span>
+    <span class="compteur-label">Destinations visitées</span>
+  </div>
+  <div class="compteur-item">
+    <span class="compteur-num">4</span>
+    <span class="compteur-label">Continents</span>
+  </div>
+  <div class="compteur-item">
+    <span class="compteur-num">∞</span>
+    <span class="compteur-label">Souvenirs</span>
+  </div>
+</div>
+
+<!-- CARROUSEL PHOTOS -->
+<div class="carrousel-section fade-in">
+  <span class="section-tag">En images</span>
+  <h2 class="section-title">Mes <em>souvenirs de voyage</em></h2>
+  <div class="divider"></div>
+  <div class="carrousel-wrapper">
+    <div class="carrousel-inner" id="carrousel">
+      <div class="carrousel-slide">
+        <!-- Remplace par : <img src="voyage-a.jpg" alt="Tunisie 2015" /> -->
+        <div class="carrousel-placeholder"><span>🌅</span><p>Tunisie — 2015<br /><small>Ajoute ta photo</small></p></div>
+      </div>
+      <div class="carrousel-slide">
+        <div class="carrousel-placeholder"><span>🏛️</span><p>Athènes, Grèce<br /><small>Ajoute ta photo</small></p></div>
+      </div>
+      <div class="carrousel-slide">
+        <div class="carrousel-placeholder"><span>🌊</span><p>Djerba<br /><small>Ajoute ta photo</small></p></div>
+      </div>
+      <div class="carrousel-slide">
+        <div class="carrousel-placeholder"><span>🏰</span><p>Irlande<br /><small>Ajoute ta photo</small></p></div>
+      </div>
+      <div class="carrousel-slide">
+        <div class="carrousel-placeholder"><span>🌺</span><p>Majorque<br /><small>Ajoute ta photo</small></p></div>
+      </div>
+      <div class="carrousel-slide">
+        <div class="carrousel-placeholder"><span>🕌</span><p>Maroc<br /><small>Ajoute ta photo</small></p></div>
+      </div>
+    </div>
+    <button class="carr-btn carr-btn-left" onclick="bouger(-1)">‹</button>
+    <button class="carr-btn carr-btn-right" onclick="bouger(1)">›</button>
+    <div class="carr-dots" id="dots"></div>
+  </div>
+  <p class="carr-counter" id="counter">1 / 6</p>
+</div>
+
+<!-- CARTE -->
+<div class="carte-section fade-in">
+  <div class="carte-wrapper">
+    <span class="section-tag">Mes destinations</span>
+    <h2 class="section-title">Pays <em>visités</em></h2>
+    <div class="divider"></div>
+
+    <div class="pays-liste">
+      <span class="pays-badge" style="background:rgba(196,133,106,0.15);color:#c4856a;">🇫🇷 France</span>
+      <span class="pays-badge" style="background:rgba(232,168,124,0.15);color:#c4856a;">🇪🇸 Espagne</span>
+      <span class="pays-badge" style="background:rgba(232,168,124,0.15);color:#c4856a;">🏝️ Majorque</span>
+      <span class="pays-badge" style="background:rgba(138,158,140,0.15);color:#8a9e8c;">🇬🇧 Angleterre</span>
+      <span class="pays-badge" style="background:rgba(107,143,109,0.15);color:#6b8f6d;">🇮🇪 Irlande</span>
+      <span class="pays-badge" style="background:rgba(184,155,114,0.15);color:#b89b72;">🇩🇪 Allemagne</span>
+      <span class="pays-badge" style="background:rgba(212,184,150,0.15);color:#b89b72;">🇧🇪 Belgique</span>
+      <span class="pays-badge" style="background:rgba(201,168,130,0.15);color:#b89b72;">🇱🇺 Luxembourg</span>
+      <span class="pays-badge" style="background:rgba(155,107,138,0.15);color:#9b6b8a;">🇹🇳 Tunisie</span>
+      <span class="pays-badge" style="background:rgba(155,107,138,0.15);color:#9b6b8a;">🏝️ Djerba</span>
+      <span class="pays-badge" style="background:rgba(122,90,122,0.15);color:#7a5a7a;">🇲🇦 Maroc</span>
+      <span class="pays-badge" style="background:rgba(91,141,184,0.15);color:#5b8db8;">🇬🇷 Athènes</span>
+    </div>
+
+    <div class="carte-svg-wrapper">
+      <!-- Carte SVG Europe + Afrique du Nord simplifiée -->
+      <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fond océan -->
+        <rect width="900" height="600" fill="#d4e9f7"/>
+
+        <!-- FRANCE -->
+        <path class="pays-france" d="M320 195 L345 185 L380 190 L395 210 L390 235 L370 255 L345 260 L315 250 L305 230 L310 210 Z"/>
+        <text x="350" y="228" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans" font-weight="500">France</text>
+
+        <!-- ESPAGNE -->
+        <path class="pays-espagne" d="M270 250 L310 248 L345 258 L350 280 L340 310 L310 325 L275 320 L250 300 L245 275 L255 258 Z"/>
+        <text x="297" y="293" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans" font-weight="500">Espagne</text>
+
+        <!-- MAJORQUE (île) -->
+        <ellipse class="pays-majorque" cx="355" cy="300" rx="12" ry="8"/>
+        <text x="355" y="303" text-anchor="middle" font-size="7" fill="white" font-family="DM Sans">Majorque</text>
+
+        <!-- ANGLETERRE / UK -->
+        <path class="pays-angleterre" d="M295 130 L320 120 L335 135 L330 165 L315 175 L295 170 L280 155 L285 138 Z"/>
+        <text x="308" y="152" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans" font-weight="500">Angleterre</text>
+
+        <!-- IRLANDE -->
+        <path class="pays-irlande" d="M255 130 L275 122 L285 135 L280 158 L265 165 L250 155 L245 140 Z"/>
+        <text x="265" y="147" text-anchor="middle" font-size="7" fill="white" font-family="DM Sans">Irlande</text>
+
+        <!-- ALLEMAGNE -->
+        <path class="pays-allemagne" d="M380 155 L415 148 L430 165 L428 190 L410 205 L385 205 L368 190 L370 168 Z"/>
+        <text x="399" y="182" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans" font-weight="500">Allemagne</text>
+
+        <!-- BELGIQUE -->
+        <path class="pays-belgique" d="M345 162 L378 158 L382 178 L360 185 L340 180 L338 168 Z"/>
+        <text x="361" y="175" text-anchor="middle" font-size="7" fill="white" font-family="DM Sans">Belgique</text>
+
+        <!-- LUXEMBOURG (petit) -->
+        <rect class="pays-luxembourg" x="372" y="178" width="16" height="14" rx="3"/>
+        <text x="380" y="188" text-anchor="middle" font-size="6" fill="white" font-family="DM Sans">Lux.</text>
+
+        <!-- Autres pays Europe (gris) -->
+        <!-- Portugal -->
+        <path class="pays-default" d="M240 255 L265 252 L268 272 L260 298 L242 295 L235 272 Z"/>
+        <!-- Pays-Bas -->
+        <path class="pays-default" d="M345 140 L370 135 L378 152 L358 160 L340 158 L338 145 Z"/>
+        <!-- Suisse -->
+        <path class="pays-default" d="M378 205 L400 202 L408 218 L395 228 L375 225 L372 212 Z"/>
+        <!-- Italie -->
+        <path class="pays-default" d="M395 215 L425 208 L445 228 L448 260 L435 290 L420 310 L408 295 L400 265 L392 238 Z"/>
+        <!-- Autriche -->
+        <path class="pays-default" d="M415 198 L450 192 L460 205 L455 218 L425 222 L410 212 Z"/>
+        <!-- Pologne -->
+        <path class="pays-default" d="M420 145 L465 140 L475 162 L468 180 L430 182 L415 165 Z"/>
+        <!-- Scandinavie simplifiée -->
+        <path class="pays-default" d="M360 60 L400 48 L430 65 L420 100 L395 115 L365 110 L348 90 Z"/>
+        <path class="pays-default" d="M400 48 L440 40 L455 60 L445 85 L420 95 L410 75 Z"/>
+        <!-- Danemark -->
+        <path class="pays-default" d="M385 118 L400 112 L408 125 L398 138 L382 135 Z"/>
+        <!-- Republique Tcheque -->
+        <path class="pays-default" d="M420 178 L452 172 L458 188 L438 196 L418 192 Z"/>
+        <!-- Grèce continentale -->
+        <path class="pays-grece" d="M448 270 L472 262 L482 278 L478 298 L462 308 L445 298 L440 282 Z"/>
+        <!-- Crète / îles grecques -->
+        <ellipse class="pays-grece" cx="475" cy="318" rx="20" ry="8"/>
+
+        <!-- ATHENES marqueur spécial -->
+        <circle cx="462" cy="285" r="6" fill="#5b8db8" stroke="white" stroke-width="2"/>
+        <text x="472" y="281" font-size="8" fill="#5b8db8" font-family="DM Sans" font-weight="500">Athènes</text>
+
+        <!-- Balkans / Hongrie etc -->
+        <path class="pays-default" d="M435 218 L470 212 L480 235 L472 258 L448 262 L432 245 L428 228 Z"/>
+        <path class="pays-default" d="M458 188 L492 182 L500 202 L488 220 L462 218 L452 202 Z"/>
+
+        <!-- Mer Méditerranée label -->
+        <text x="430" y="345" text-anchor="middle" font-size="11" fill="#7fb3d3" font-family="Cormorant Garamond" font-style="italic">Mer Méditerranée</text>
+
+        <!-- TUNISIE -->
+        <path class="pays-tunisie" d="M390 370 L410 362 L420 378 L418 400 L408 415 L392 412 L382 395 L385 378 Z"/>
+        <text x="401" y="393" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans" font-weight="500">Tunisie</text>
+
+        <!-- DJERBA (île Tunisie) -->
+        <ellipse class="pays-tunisie" cx="408" cy="422" rx="10" ry="7"/>
+        <text x="422" y="425" font-size="7" fill="#9b6b8a" font-family="DM Sans">Djerba</text>
+
+        <!-- MAROC -->
+        <path class="pays-maroc" d="M280 360 L318 352 L330 372 L325 405 L308 425 L285 422 L268 402 L268 378 Z"/>
+        <text x="299" y="393" text-anchor="middle" font-size="9" fill="white" font-family="DM Sans" font-weight="500">Maroc</text>
+
+        <!-- Algérie (gris) -->
+        <path class="pays-default" d="M328 368 L388 358 L395 382 L388 415 L360 430 L330 425 L318 405 Z"/>
+
+        <!-- Libye (gris) -->
+        <path class="pays-default" d="M420 370 L470 362 L478 395 L468 425 L428 428 L415 408 Z"/>
+
+        <!-- Atlantique label -->
+        <text x="160" y="280" text-anchor="middle" font-size="11" fill="#7fb3d3" font-family="Cormorant Garamond" font-style="italic" transform="rotate(-15, 160, 280)">Océan Atlantique</text>
+
+        <!-- Légende carte -->
+        <rect x="620" y="30" width="260" height="220" rx="10" fill="rgba(250,248,244,0.92)" stroke="#e8dcc8" stroke-width="1"/>
+        <text x="750" y="55" text-anchor="middle" font-size="11" fill="#2c2825" font-family="Cormorant Garamond" font-weight="600">Pays visités</text>
+        <line x1="635" y1="62" x2="868" y2="62" stroke="#e8dcc8" stroke-width="0.5"/>
+
+        <rect x="640" y="75" width="12" height="12" rx="3" fill="#c4856a"/>
+        <text x="660" y="85" font-size="9" fill="#5c5248" font-family="DM Sans">France</text>
+
+        <rect x="640" y="97" width="12" height="12" rx="3" fill="#e8a87c"/>
+        <text x="660" y="107" font-size="9" fill="#5c5248" font-family="DM Sans">Espagne &amp; Majorque</text>
+
+        <rect x="640" y="119" width="12" height="12" rx="3" fill="#8a9e8c"/>
+        <text x="660" y="129" font-size="9" fill="#5c5248" font-family="DM Sans">Angleterre</text>
+
+        <rect x="640" y="141" width="12" height="12" rx="3" fill="#6b8f6d"/>
+        <text x="660" y="151" font-size="9" fill="#5c5248" font-family="DM Sans">Irlande</text>
+
+        <rect x="640" y="163" width="12" height="12" rx="3" fill="#b89b72"/>
+        <text x="660" y="173" font-size="9" fill="#5c5248" font-family="DM Sans">Allemagne / Belgique / Lux.</text>
+
+        <rect x="640" y="185" width="12" height="12" rx="3" fill="#9b6b8a"/>
+        <text x="660" y="195" font-size="9" fill="#5c5248" font-family="DM Sans">Tunisie &amp; Djerba</text>
+
+        <rect x="640" y="207" width="12" height="12" rx="3" fill="#7a5a7a"/>
+        <text x="660" y="217" font-size="9" fill="#5c5248" font-family="DM Sans">Maroc</text>
+
+        <rect x="640" y="229" width="12" height="12" rx="3" fill="#5b8db8"/>
+        <text x="660" y="239" font-size="9" fill="#5c5248" font-family="DM Sans">Athènes, Grèce</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- RETOUR -->
+<div class="retour-section">
+  <p>« Voyager, c'est grandir. Accueillir, c'est donner. »</p>
+  <a href="index.html" class="btn-retour">← Retour au portfolio</a>
+</div>
+
+<script>
+  // Carrousel
+  let idx = 0;
+  const total = 6;
+  const carrousel = document.getElementById('carrousel');
+  const dotsContainer = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+
+  // Créer les points
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'carr-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => allerA(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  function allerA(n) {
+    idx = (n + total) % total;
+    carrousel.style.transform = `translateX(-${idx * 100}%)`;
+    document.querySelectorAll('.carr-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+    counter.textContent = `${idx + 1} / ${total}`;
+  }
+
+  function bouger(dir) { allerA(idx + dir); }
+
+  // Auto-défilement
+  setInterval(() => bouger(1), 4500);
+
+  // Fade in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
